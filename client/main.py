@@ -8,7 +8,6 @@ print("Client launched.")
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     print("Connecting to: " + HOST + ":" + str(PORT))
     s.connect((HOST, PORT))
-    s.sendall(b"Hello")
 
     msg = ""
     while True:

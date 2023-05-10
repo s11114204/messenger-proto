@@ -17,7 +17,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
             received_str = data.decode("utf-8")
             length = len(received_str)
-            print(f"getting length of {received_str} : {length} : {len(received_str)}")
             send_str = f"Length of your string is: {str(length)}"
 
             print(f"Received: {received_str}")
