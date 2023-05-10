@@ -21,6 +21,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.sendall(send_data)
 
         receive_data = s.recv(1024)
-        print(f"Received: {receive_data!r}")
+        print(f"Received: {receive_data}")
 
     print("Closing connection")

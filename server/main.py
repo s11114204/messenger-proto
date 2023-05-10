@@ -17,9 +17,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
             received_str = data.decode("utf-8")
             length = len(received_str)
-            send_str = "Length of your string is: " + str(length)
+            send_str = f"Length of your string is: {str(length)}"
 
-            print("Received: " + received_str + ", of length: " + str(length))
+            print(f"Received: {received_str}")
             conn.sendall(str.encode(send_str))
 
         print("Closing connection")
