@@ -20,7 +20,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         send_data = str.encode(msg)
         s.sendall(send_data)
 
-        receive_data = s.recv(1024)
-        print(f"Received: {receive_data}")
+        received_data = s.recv(1024)
+        received_str = received_data.decode("utf-8")
+
+        print(f"Received: {received_str}")
 
     print("Closing connection")
