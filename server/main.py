@@ -11,8 +11,14 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print(f"Connected by {addr}")
         while True:
             data = conn.recv(1024)
+
+            received_str = data.decode("utf-8")
+
             if not data:
                 break
-            conn.sendall(data)
+
+            send_str = "Length of your string is: " + str(len(received_str))
+
+            conn.sendall(str.encode(send_str))
 
         print("Closing connection")
